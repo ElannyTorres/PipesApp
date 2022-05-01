@@ -1,12 +1,26 @@
 <!-- Pipes: transforman visualmente la información. Solo se importa cuando se está trabajando en un módulo independiente  -->
 
-<h1>{{nombre | titlecase }}</h1>
+<div class="text-layout">
 
-<h2>{{valor | number}}</h2>
-<h2>{{obj | json}}</h2>
+  <h1>{{nombre | titlecase }}</h1>
+  <h2>{{valor | number}}</h2>
+  <h2>{{obj | json}}</h2>
+
+</div>
+
+
 
 <button pButton
-  class="p-button-raised p-button-rounded"
+  class="p-button-help p-button-rounded"
+  icon="pi pi-check" iconPos="right"
   (click)="mostrarNombre()"
   label="Cambiar nombre">
 </button>
+
+<div style="margin: 1rem;">
+  <p-card [header]="nombre | titlecase"
+    subheader="Subheader"
+    [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+  </p-card>
+</div>
